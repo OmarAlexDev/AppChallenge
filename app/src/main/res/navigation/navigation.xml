@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/techFragment">
+
+    <fragment
+        android:id="@+id/techFragment"
+        android:name="com.example.appchallengue1.TechFragment"
+        android:label="fragment_tech"
+        tools:layout="@layout/fragment_tech" >
+        <action
+            android:id="@+id/action_techFragment_to_smartphonesFragment"
+            app:destination="@id/smartphonesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/smartphonesFragment"
+        android:name="com.example.appchallengue1.SmartphonesFragment"
+        android:label="fragment_smartphones"
+        tools:layout="@layout/fragment_smartphones" >
+        <action
+            android:id="@+id/action_smartphonesFragment_to_smartphoneFragment"
+            app:destination="@id/smartphoneFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/smartphoneFragment"
+        android:name="com.example.appchallengue1.SmartphoneFragment"
+        android:label="fragment_smartphone"
+        tools:layout="@layout/fragment_smartphone">
+        <argument
+            android:name="smartphone"
+            app:argType="com.example.appchallengue1.Smartphone" />
+    </fragment>
+</navigation>
